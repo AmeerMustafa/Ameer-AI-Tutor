@@ -8,7 +8,7 @@ import { TypingIndicator } from "@/components/TypingIndicator";
 import { QuickActions } from "@/components/QuickActions";
 import { getGroqChatCompletion, type Message } from "@/lib/groq";
 import { Heart } from "lucide-react";
-import aiTutorIllustration from "@/assets/ai-tutor-futuristic-avatar.png";
+// import aiTutorIllustration from "@/assets/ai-tutor-futuristic-avatar.png";
 
 interface ChatMessage {
   id: string;
@@ -125,9 +125,9 @@ const Index = () => {
           <div className="w-80 hidden lg:flex flex-col items-center justify-start pt-8">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-card p-6 text-center">
               <img 
-                src={aiTutorIllustration} 
+                src="/ai-tutor-avatar.jpg" 
                 alt="AI Tutor Assistant" 
-                className="w-48 h-48 mx-auto mb-4"
+                className="w-48 h-48 mx-auto mb-4 rounded-full object-cover"
               />
               <h3 className="font-heading font-semibold text-secondary mb-2">
                 Your AI Learning Companion
