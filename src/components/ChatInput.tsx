@@ -26,7 +26,8 @@ export const ChatInput = ({ onSendMessage, isLoading }: ChatInputProps) => {
       try {
         const transcription = await stopRecording();
         if (transcription.trim()) {
-          setMessage(transcription);
+          onSendMessage(transcription.trim());
+          setMessage("");
         }
       } catch (error) {
         console.error("Error during transcription:", error);
