@@ -8,7 +8,7 @@ import { TypingIndicator } from "@/components/TypingIndicator";
 import { QuickActions } from "@/components/QuickActions";
 import { getGroqChatCompletion, type Message } from "@/lib/groq";
 import { Heart } from "lucide-react";
-import aiTutorIllustration from "@/assets/ai-tutor-illustration.png";
+import aiTutorIllustration from "@/assets/ai-tutor-futuristic-avatar.png";
 
 interface ChatMessage {
   id: string;
