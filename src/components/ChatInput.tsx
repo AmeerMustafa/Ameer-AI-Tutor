@@ -44,7 +44,7 @@ export const ChatInput = ({ onSendMessage, isLoading }: ChatInputProps) => {
   const isBusy = isLoading || isRecording || isTranscribing;
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2 p-4 glass rounded-2xl">
+    <form onSubmit={handleSubmit} className="flex gap-3 p-4 bg-white border border-secondary/20 rounded-xl shadow-soft">
       <div className="flex-1 flex gap-2">
         <Input
           value={message}
@@ -56,7 +56,7 @@ export const ChatInput = ({ onSendMessage, isLoading }: ChatInputProps) => {
                 ? "Converting speech to text..." 
                 : "Ask me anything... I'm here to help you learn!"
           }
-          className="flex-1 bg-transparent border-0 text-foreground placeholder:text-muted-foreground focus-visible:ring-0 focus-visible:ring-offset-0"
+          className="flex-1 border-secondary/30 focus:ring-primary focus:border-primary font-body"
           disabled={isBusy}
         />
         <Button
@@ -67,7 +67,7 @@ export const ChatInput = ({ onSendMessage, isLoading }: ChatInputProps) => {
             isRecording 
               ? "bg-red-500 hover:bg-red-600 animate-pulse" 
               : "bg-gradient-primary hover:opacity-90"
-          } transition-all glow`}
+          } transition-all shadow-glow rounded-xl`}
           size="icon"
         >
           {isTranscribing ? (
@@ -82,7 +82,7 @@ export const ChatInput = ({ onSendMessage, isLoading }: ChatInputProps) => {
       <Button 
         type="submit" 
         disabled={!message.trim() || isBusy}
-        className="bg-gradient-primary hover:opacity-90 transition-opacity glow"
+        className="bg-gradient-primary hover:opacity-90 transition-opacity shadow-glow rounded-xl"
         size="icon"
       >
         {isLoading ? (

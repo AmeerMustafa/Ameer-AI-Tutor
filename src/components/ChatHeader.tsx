@@ -3,24 +3,16 @@ import { GraduationCap, Sparkles } from "lucide-react";
 
 export const ChatHeader = () => {
   return (
-    <div className="flex items-center justify-center p-6 glass rounded-2xl mb-6">
+    <header className="flex items-center justify-between p-4 bg-white/90 backdrop-blur-sm border-b border-muted">
       <div className="flex items-center gap-3">
-        <Avatar className="w-12 h-12 bg-gradient-accent glow">
-          <AvatarFallback className="bg-transparent">
-            <GraduationCap className="w-6 h-6 text-white" />
-          </AvatarFallback>
-        </Avatar>
-        
-        <div className="text-center">
-          <h1 className="text-2xl font-bold gradient-text flex items-center gap-2">
-            AI Tutor
-            <Sparkles className="w-5 h-5 text-yellow-400 animate-pulse" />
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            Your personal learning companion
-          </p>
+        <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+          <GraduationCap className="w-5 h-5 text-white" />
         </div>
+        <h1 className="text-xl font-heading font-bold text-primary">AI Tutor</h1>
       </div>
-    </div>
+      <div className="flex items-center gap-2">
+        <span className="text-sm text-muted-foreground font-body">World-Class Learning Experience</span>
+      </div>
+    </header>
   );
 };
