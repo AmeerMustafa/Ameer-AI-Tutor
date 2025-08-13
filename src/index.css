@@ -10,94 +10,92 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light theme colors - Premium Purple Palette */
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* World-Class AI Tutor Color Palette */
+    --background: 0 0% 100%; /* Pure White */
+    --foreground: 220 26% 14%; /* #1F2937 Charcoal Grey */
+
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 26% 14%;
+
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 262 83% 58%; /* #A855F7 - Vivid Purple */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 251 91% 95.9%; /* #E9D5FF - Soft Lilac */
-    --secondary-foreground: 270 95% 25%; /* Deep Purple for text */
-    --muted: 251 91% 95.9%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 270 100% 87%; /* #C084FC - Lavender */
-    --accent-foreground: 270 95% 25%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 251 91% 95.9%;
-    --input: 251 91% 95.9%;
-    --ring: 262 83% 58%;
-    --radius: 1rem;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --popover-foreground: 220 26% 14%;
 
-    /* Premium Purple Gradients */
-    --gradient-background: linear-gradient(135deg, #C084FC 0%, #A855F7 25%, #7C3AED 50%, #6366F1 100%);
-    --gradient-primary: linear-gradient(135deg, #A855F7 0%, #7C3AED 100%);
-    --gradient-accent: linear-gradient(135deg, #C084FC 0%, #E9D5FF 100%);
-    --gradient-glass: rgba(192, 132, 252, 0.1);
-    --gradient-border: linear-gradient(135deg, #C084FC, #7C3AED);
+    /* Primary Accent - Vibrant Blue #007BFF */
+    --primary: 211 100% 50%; /* #007BFF */
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary Accent - Marine/Sea-Green #00A9A5 */
+    --secondary: 178 100% 33%; /* #00A9A5 */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 13% 91%; /* Light grey for cards/sections */
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 178 100% 33%; /* Marine for highlights */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs with marine accent */
+    --border: 178 100% 33%; /* Marine border */
+    --input: 0 0% 100%; /* White input background */
+    --ring: 211 100% 50%; /* Blue focus glow */
+
+    --radius: 0.625rem; /* 10px rounded corners */
+
+    /* Gradient definitions - Blue to Marine */
+    --gradient-primary: linear-gradient(135deg, hsl(211 100% 50%), hsl(178 100% 33%));
+    --gradient-secondary: linear-gradient(135deg, hsl(178 100% 33%), hsl(211 100% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(211 100% 50% / 0.1), hsl(178 100% 33% / 0.1));
+    --gradient-background: linear-gradient(135deg, hsl(0 0% 100%), hsl(240 20% 98%));
+    --gradient-chat-bg: linear-gradient(180deg, hsl(0 0% 100%), hsl(240 20% 96%));
     
-    /* Premium Glass morphism */
-    --glass-bg: rgba(249, 250, 251, 0.15);
-    --glass-border: rgba(192, 132, 252, 0.2);
-    --glass-shadow: 0 8px 32px 0 rgba(168, 85, 247, 0.15);
-    --glass-backdrop: blur(12px);
-
-    /* Premium shadows with purple glow */
-    --shadow-card: 0 10px 30px -10px rgba(168, 85, 247, 0.1);
-    --shadow-elegant: 0 20px 40px -10px rgba(168, 85, 247, 0.2);
-    --shadow-glow: 0 0 40px rgba(168, 85, 247, 0.3);
-    --shadow-purple-glow: 0 10px 30px -10px rgba(124, 58, 237, 0.4);
+    /* Glass morphism for modern look */
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 169, 165, 0.2); /* Marine with transparency */
+    
+    /* Shadows with design spec colors */
+    --shadow-glow: 0 0 40px hsl(211 100% 50% / 0.3); /* Blue glow */
+    --shadow-soft: 0 4px 20px hsl(220 13% 91%); /* Light grey shadow */
+    --shadow-card: 0 2px 10px hsl(220 13% 91%); /* Card shadow from spec */
 
     /* Sidebar colors */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 222.2 84% 4.9%;
-    --sidebar-primary: 262 83% 58%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 251 91% 95.9%;
-    --sidebar-accent-foreground: 270 95% 25%;
-    --sidebar-border: 251 91% 95.9%;
-    --sidebar-ring: 262 83% 58%;
+    --sidebar-foreground: 220 26% 14%;
+    --sidebar-primary: 211 100% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 220 26% 14%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 211 100% 50%;
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
-    --primary: 263 70% 50%; /* Darker purple for dark mode */
-    --primary-foreground: 210 40% 98%;
-    --secondary: 270 3% 11%;
-    --secondary-foreground: 213 31% 91%;
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-    --ring: 263 70% 50%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-
-    /* Dark mode gradients */
-    --gradient-background: linear-gradient(135deg, #1e1b4b 0%, #312e81 25%, #3730a3 50%, #4338ca 100%);
-    --glass-bg: rgba(30, 27, 75, 0.2);
-    --glass-border: rgba(168, 85, 247, 0.3);
-    --shadow-glow: 0 0 60px rgba(168, 85, 247, 0.4);
+    /* Keep dark mode but ensure compatibility */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 211 100% 50%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 178 100% 33%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 178 100% 33%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 211 100% 50%;
+    --gradient-background: linear-gradient(135deg, hsl(240 10% 3.9%), hsl(260 10% 6%));
+    --gradient-chat-bg: linear-gradient(180deg, hsl(240 10% 3.9%), hsl(250 12% 8%));
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -110,117 +108,62 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     background: var(--gradient-background);
     min-height: 100vh;
-    font-family: 'Inter', 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Body text font */
   }
   
   /* Typography System */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', 'Poppins', sans-serif;
+    font-family: 'Inter', 'Poppins', sans-serif; /* Headings font */
     font-weight: 600;
   }
   
   h1, h2 {
-    color: hsl(var(--primary));
+    color: hsl(var(--primary)); /* Blue headings */
   }
   
   h3, h4, h5, h6 {
-    color: hsl(var(--secondary-foreground));
+    color: hsl(var(--secondary)); /* Marine subheadings */
   }
   
-  /* Premium Utility Classes */
   .gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-
-  .gradient-text-accent {
-    background: var(--gradient-accent);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
+  
   .glass {
     background: var(--glass-bg);
-    backdrop-filter: var(--glass-backdrop);
+    backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    box-shadow: var(--glass-shadow);
   }
-
+  
   .glow {
     box-shadow: var(--shadow-glow);
   }
-
-  .purple-glow {
-    box-shadow: var(--shadow-purple-glow);
-  }
-
+  
+  /* Card styling from design spec */
   .card-shadow {
     box-shadow: var(--shadow-card);
-  }
-
-  .floating-orb {
-    position: absolute;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.1) 0%, transparent 70%);
-    animation: float 6s ease-in-out infinite;
-  }
-
-  .floating-orb:nth-child(odd) {
-    animation-delay: -3s;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px) rotate(0deg); }
-    50% { transform: translateY(-20px) rotate(180deg); }
-  }
-
-  .neural-pattern {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0.05;
-    background-image: 
-      radial-gradient(2px 2px at 20px 30px, rgba(168, 85, 247, 0.5), transparent),
-      radial-gradient(2px 2px at 40px 70px, rgba(124, 58, 237, 0.5), transparent),
-      radial-gradient(1px 1px at 90px 40px, rgba(192, 132, 252, 0.5), transparent),
-      radial-gradient(1px 1px at 130px 80px, rgba(168, 85, 247, 0.3), transparent);
-    background-repeat: repeat;
-    background-size: 150px 120px;
-  }
-
-  .btn-premium {
-    background: var(--gradient-primary);
-    color: white;
-    border: none;
-    border-radius: 16px;
-    padding: 14px 28px;
-    font-weight: 600;
-    font-size: 16px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: var(--shadow-purple-glow);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .btn-premium:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 35px -5px rgba(168, 85, 247, 0.4);
-  }
-
-  .btn-premium:active {
-    transform: translateY(0px);
-  }
-
-  .upload-zone {
-    border: 2px dashed transparent;
-    background: linear-gradient(white, white) padding-box, var(--gradient-border) border-box;
     transition: all 0.3s ease;
   }
-
-  .upload-zone:hover {
-    background: linear-gradient(rgba(168, 85, 247, 0.02), rgba(168, 85, 247, 0.02)) padding-box, var(--gradient-border) border-box;
+  
+  .card-shadow:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px hsl(220 13% 91%);
+  }
+  
+  /* Button styling from design spec */
+  .btn-world-class {
+    border-radius: 10px;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-world-class:hover {
+    box-shadow: 0 4px 15px hsl(211 100% 50% / 0.3);
+    transform: translateY(-1px);
   }
 }
