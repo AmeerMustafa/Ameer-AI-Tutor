@@ -23,6 +23,11 @@ const Index = () => {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
 
+  // Debug logging
+  console.log("Index component rendering...");
+  console.log("Messages count:", messages.length);
+  console.log("Is loading:", isLoading);
+
   useEffect(() => {
     // Auto-scroll to bottom when new messages are added
     if (scrollAreaRef.current) {
