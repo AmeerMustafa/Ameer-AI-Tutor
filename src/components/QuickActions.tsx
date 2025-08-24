@@ -31,17 +31,17 @@ export const QuickActions = ({ onQuickAction, isLoading }: QuickActionsProps) =>
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-3 mb-6">
+    <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
       {quickPrompts.map((action, index) => (
         <Button
           key={index}
           variant="outline"
           onClick={() => onQuickAction(action.prompt)}
           disabled={isLoading}
-          className="h-auto p-4 flex flex-col items-center gap-2 glass hover:bg-gradient-primary hover:text-white transition-all duration-300 group"
+          className="h-auto p-6 flex flex-col items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 hover:bg-gradient-to-r hover:from-purple-600/80 hover:to-pink-600/80 hover:text-white hover:scale-105 transition-all duration-300 group text-white rounded-2xl"
         >
-          <action.icon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-          <span className="text-xs font-medium">{action.label}</span>
+          <action.icon className="w-6 h-6 group-hover:scale-110 transition-transform" />
+          <span className="text-sm font-medium">{action.label}</span>
         </Button>
       ))}
     </div>

@@ -84,71 +84,82 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-background">
-      <div className="max-w-7xl mx-auto h-screen flex flex-col">
+    <div className="min-h-screen relative">
+      {/* Luxe Rainbow Background Elements */}
+      <div className="body-gradient"></div>
+      <div className="body-vignette"></div>
+      <div className="body-noise"></div>
+      
+      {/* Glass Header Badge */}
+      <div className="made-by">
+        <div className="made-by__dot"></div>
+        <span className="made-by__name">Ameer Mustafa</span>
+      </div>
+
+      <div className="h-screen flex flex-col">
         <ChatHeader />
         
-        {/* Main Content Area - 70/30 Split */}
-        <div className="flex-1 flex gap-6 p-6 min-h-0">
-          {/* Left 70% - Chat Interface */}
-          <div className="flex-1 flex flex-col min-h-0 bg-white/80 backdrop-blur-sm rounded-2xl shadow-card p-6">
-            <ScrollArea ref={scrollAreaRef} className="flex-1 pr-4">
-              <div className="space-y-4">
-                {messages.length === 0 && (
-                  <div className="text-center py-12">
-                    <div className="mb-8">
-                      <h2 className="text-xl font-heading font-semibold text-primary mb-2">
-                        Welcome to your AI Tutor! 🎓
-                      </h2>
-                      <p className="text-muted-foreground font-body">
-                        I'm here to help you learn anything. Ask me questions, request explanations, or get study help!
-                      </p>
-                    </div>
-                    <QuickActions onQuickAction={handleSendMessage} isLoading={isLoading} />
+        {/* Main Chat Area - GPT-5 Style */}
+        <div className="flex-1 flex flex-col min-h-0">
+          {/* Welcome Screen */}
+          {messages.length === 0 && (
+            <div className="flex-1 flex flex-col items-center justify-center px-4 py-8">
+              <div className="text-center max-w-2xl mx-auto">
+                {/* AI Avatar */}
+                <div className="mb-8">
+                  <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 flex items-center justify-center">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
                   </div>
-                )}
+                  <h1 className="text-4xl font-bold text-white mb-4">
+                    AI Tutor
+                  </h1>
+                  <p className="text-xl text-white/80 mb-8 leading-relaxed">
+                    Your intelligent learning companion. Ask me anything and I'll help you understand, learn, and grow.
+                  </p>
+                </div>
                 
-                {messages.map((message) => (
-                  <ChatMessage
-                    key={message.id}
-                    message={message.content}
-                    isUser={message.isUser}
-                    timestamp={message.timestamp}
-                  />
-                ))}
+                {/* Quick Actions */}
+                <QuickActions onQuickAction={handleSendMessage} isLoading={isLoading} />
                 
-                {isLoading && <TypingIndicator />}
+                {/* Footer */}
+                <div className="mt-12 text-center">
+                  <p className="text-sm text-white/60">
+                    Made with <Heart className="w-4 h-4 text-red-400 inline mx-1" /> by Ameer Mustafa
+                  </p>
+                </div>
               </div>
-            </ScrollArea>
-            
-            <div className="mt-6">
+            </div>
+          )}
+          
+          {/* Chat Messages */}
+          {messages.length > 0 && (
+            <div className="flex-1 overflow-hidden">
+              <ScrollArea ref={scrollAreaRef} className="h-full px-4 py-6">
+                <div className="max-w-4xl mx-auto space-y-6">
+                  {messages.map((message) => (
+                    <ChatMessage
+                      key={message.id}
+                      message={message.content}
+                      isUser={message.isUser}
+                      timestamp={message.timestamp}
+                    />
+                  ))}
+                  
+                  {isLoading && <TypingIndicator />}
+                </div>
+              </ScrollArea>
+            </div>
+          )}
+          
+          {/* Chat Input - Fixed at Bottom */}
+          <div className="border-t border-white/20 bg-black/20 backdrop-blur-md">
+            <div className="max-w-4xl mx-auto p-4">
               <ChatInput onSendMessage={handleSendMessage} isLoading={isLoading} />
             </div>
           </div>
-          
-          {/* Right 30% - AI Illustration */}
-          <div className="w-80 hidden lg:flex flex-col items-center justify-start pt-8">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-card p-6 text-center">
-              <img 
-                src="/ai-tutor-avatar.jpg" 
-                alt="AI Tutor Assistant" 
-                className="w-48 h-48 mx-auto mb-4 rounded-full object-cover"
-              />
-              <h3 className="font-heading font-semibold text-secondary mb-2">
-                Your AI Learning Companion
-              </h3>
-              <p className="text-sm text-muted-foreground font-body">
-                Ready to help you master any subject with personalized explanations and guidance.
-              </p>
-            </div>
-          </div>
         </div>
-        
-        <footer className="text-center py-4 bg-white/50 backdrop-blur-sm">
-          <p className="text-sm text-muted-foreground font-body flex items-center justify-center gap-1">
-            made with <Heart className="w-4 h-4 text-red-500 animate-pulse" /> by Ameer Mustafa
-          </p>
-        </footer>
       </div>
     </div>
   );
